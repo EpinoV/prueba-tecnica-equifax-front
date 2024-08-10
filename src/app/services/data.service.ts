@@ -10,11 +10,15 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getData() {
-    return this.http.get(`${this.apiUrl}/allData`);
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+
+    return this.http.get(`${this.apiUrl}/allData`, { headers });
   }
 
   newData(data: { nombre: string; email: string; celular: string; rut: string }) {
-    return this.http.post(`${this.apiUrl}/newData`, data);
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+
+    return this.http.post(`${this.apiUrl}/newData`, data, { headers });
   }
 
 }
