@@ -14,6 +14,9 @@ export class DataComponent implements OnInit {
   ngOnInit() {
     this.dataService.getData().subscribe((response: any) => {
       this.data = response;
+    }, (error) => {
+      console.error('Data load failed', error);
     });
+
   }
 }
