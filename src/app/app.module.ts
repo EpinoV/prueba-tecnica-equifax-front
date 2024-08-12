@@ -8,6 +8,7 @@ import { DataComponent } from './private/data/data.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExcelModule } from './excel/excel.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DataComponent
   ],
   imports: [
+    ExcelModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
